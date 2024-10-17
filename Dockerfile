@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM debian:stable-slim
 
 RUN apt update \
     && DEBIAN_FRONTEND=noninteractive \
