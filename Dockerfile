@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
-ARG CLOUDFLARED_VERSION
+ARG CLOUDFLARED_VERSION=latest
 FROM cloudflare/cloudflared:${CLOUDFLARED_VERSION} AS upstream
 
 FROM debian:stable-slim
-ARG CLOUDFLARED_VERSION
+ARG CLOUDFLARED_VERSION=latest
 LABEL org.opencontainers.image.version="${CLOUDFLARED_VERSION}"
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends --assume-yes \
